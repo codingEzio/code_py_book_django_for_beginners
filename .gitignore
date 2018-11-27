@@ -2,7 +2,6 @@
 # My own 
 .idea
 ._*
-*.txt
 env
 __pycache__
 .vscode
