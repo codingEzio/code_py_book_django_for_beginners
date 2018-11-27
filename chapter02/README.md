@@ -40,6 +40,10 @@
     2. views.homepage  (correspond to ```views.py```)
     3. name="home"  (it's ?optional) (access by ***URL/?name***)
 
+### temp-notes 
+- newapp: 
+    - -> setting -> app-folder 
+    - -> proj_url -> app_url -> app_view -> model (& db)
 
 ### conventions 
 - I found the ```urlpatterns``` in ```urls.py``` is ?required by *Django*
