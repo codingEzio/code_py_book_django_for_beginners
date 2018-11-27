@@ -25,7 +25,11 @@ SECRET_KEY = 'w=b=pudh-cm%xs_4agc4c42aqnkr6wt872fu4yx4n@%r^zu=q8'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+# Using '*' here is just for brevity
+#   Umm .. of course it's NOT recommended :P
+# See doc
+#   https://docs.djangoproject.com/en/2.1/ref/settings/#allowed-hosts
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
