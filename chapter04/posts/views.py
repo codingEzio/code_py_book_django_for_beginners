@@ -4,7 +4,8 @@ from .models import Post
 
 class HomePageView(ListView):
     """
-        About the listview (content-related)
+        `ListView` is for displaying content.
+        `all_posts_list` is for templates (db <-> frontend)
     """
 
     model = Post
