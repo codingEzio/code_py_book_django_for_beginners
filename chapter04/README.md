@@ -25,3 +25,15 @@
     - ya can *omit* the 'APP_NAME' (e.g. ```posts```)
         - but ***don't***, just DON'T
         - do make it as **small** and **isolated** as possible! :P
+
+- **Superuser**!
+    - concept (beginning)
+        - ```models.py``` -> *make migrations* -> ```admin.py```
+        - the actual steps were (while I was learning :P)
+            1. ```models.py```
+            2. *make migrations*
+            3. get a user ```python manage.py createsuperuser``` 
+            4. register the **app** (i.e. ```Posts```) at the ```admin.py```
+    - about the ```models.py```
+        - it could also affect the *view* side (sort of)
+            - e.g. add a ```__str__``` (part-of-content as Title)
