@@ -1,3 +1,5 @@
+# Chapter 05 (why name it? cuz there's cp06 down below)
+
 ### steps (initial phase)
 - okay 
     1. project & app 
@@ -70,3 +72,29 @@
             - ```<h2><a href=```
         - now
             - ```<h2><a href="{% url 'post_detail' post.pk %}">{{ post.title }}</a></h2>```
+
+<hr>
+
+# Here comes the 'chapter06' (which based on the 'Chapter05' project)
+
+### forms! 
+- that's a security concern: **CSRF** 
+    - we'll talk about later (Page 128) 
+    - ... and notes will be take later as well :P
+  
+### still, we'need to know what was added in Chapter 06 (at least part of them)
+- okay.. 
+    1. add new function to ```base.html``` first (that we didn't impl it, yet.)
+        - like ```<a href="{% url 'post_new' %}">+New blog post</a>```
+    2. add **url**
+        - ```path('post/new/', BlogCreateView.as_view(), name='post_new')```
+    3. add **view**
+        - ```from django.views.generic.edit import CreateView```
+        - ```class BlogCreateView(CreateView):``` ... 
+    4. and we go back to the *template* (in ```views.py```, we don't impl yet when creates it)
+        - that is```template_name = 'post_new.html'```
+        - so let's impl the template! 
+- now we've impl it, but cannot *submit* then **redirect** to the right page
+    - do this (in ```models.py```)
+        1. ```from django.urls import reverse```
+        2. ```def get_absolute_url(self):  return reverse("post_detail", args=[str(self.id)])```
