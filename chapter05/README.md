@@ -33,3 +33,40 @@
     3. load it into template
         - at top: ```load static```
         - header: ```<link href="{% static 'css/base.css' %}" rel="stylesheet">```
+
+- something more 
+    1. ```DetailView``` in ```views.py```
+        - by default it'll provide a context object 
+            - either ```object``` or lowercase of our ***model***
+        - and *expects* either 
+            - a *primary key* or a ?*slug passed to it as the identifier* (wtf) ("more on this shortly" said by author)
+
+- let's talk about ```class in views```
+    - e.g. ```BlogListView```, ```BlogDetailView```
+        1. inside, its model (name) is ```Post``` (which was imported from the ```models.py``` file)
+        2. and ***we're using the in the template***
+    - about the "how we're using the name"
+        - (we've talked about that, but to be clear, I gonna say it again)
+    - it's either ```object``` OR the model name ```post``` 
+        - like the name were used in the ```home.html```
+            1. ```for post in object_list```
+            2. ```post.titl```
+            3. ```post.body```
+    - BUT! We're gonna change it (by adding another ***static variable***)
+        - thus ```context_object_name```
+
+
+- about the ```post/<int:pk>/``` in the (APP) ```blog/urls.py```
+    1. ```post/```: starts with [post/](post/)
+    2. other than the three **col** (i.e. ```title```, ```author```, ```body```) defined in the ```models.py``` => class ```Post```
+        - the Django itself create a ```id``` col for us (it was used as our ***primary-key***)
+        - the ```pk``` is exactly *points* to that (aha!) (it's *auto-increment*, BTW 😅)
+
+- one last step
+    - give the ```href``` the real power! (points to actual post)
+        - (it was '#' before)
+    - edit the ```home.html```
+        - before 
+            - ```<h2><a href=```
+        - now
+            - ```<h2><a href="{% url 'post_detail' post.pk %}">{{ post.title }}</a></h2>```
