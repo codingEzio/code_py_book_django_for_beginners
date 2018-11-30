@@ -98,3 +98,11 @@
     - do this (in ```models.py```)
         1. ```from django.urls import reverse```
         2. ```def get_absolute_url(self):  return reverse("post_detail", args=[str(self.id)])```
+
+
+### Now we'll add a new func (Form::editPost)
+- steps 
+    1. add entry <post_edit> in post_detail (both're tmplts)
+    2. write post_detail   
+        1. then its views 
+        2. then its urls #TODO edit later
