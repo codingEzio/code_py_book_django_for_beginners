@@ -103,6 +103,11 @@
 ### Now we'll add a new func (Form::editPost)
 - steps 
     1. add entry <post_edit> in post_detail (both're tmplts)
-    2. write post_detail   
+    2. write post_edit   
         1. then its views 
         2. then its urls #TODO edit later
+- let's talk about the deletePost here as well
+    1. add entry (i.e. a link) in post_detail 
+    2. write post_delete (similar, but not the same as 'post_edit')
+        1. then its views 
+        2. then its urls #TODO edit later 
