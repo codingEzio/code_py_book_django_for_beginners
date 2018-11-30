@@ -149,7 +149,7 @@
     3. tiny update of the settings.py 
         - after login successfully, it'll redirect to LOGIN_REDIRECT_URL = 'home' 
     4. umm... that's all!!!! we now DO have an auth feature
-        - but u need manually type the URL/accounts/login 
+        - but u need manually type the <URL```/accounts/login```> 
             - if wrong, it'll notify you (it is FUNCTIONAL)
             - if right, go to 'home.html' (by the 'settings.py')
 
@@ -167,4 +167,13 @@
     1. create an app ```accounts``` and name-it let Django knows it
         - create: ```python3 manage.py startapp accounts```
         - let'em know: ```accounts.apps.AccountsConfig``` (in ```INSTALLED_APPS``` of ```settings.py```)
-    2. 
+    2. actual logic 
+        - proj_url => app_url => app_view => template 
+    3. logic code 
+        - ```path("accounts/", include('accounts.urls')),```
+        - ```path("signup/", SignUpView.as_view(), name="signup")```
+        - ... ```class SignUpView``` ... 
+        - ... ```<button type='submit'>Sign up</button>``` ...
+- then just run it
+    - still, ya need type the url manually
+    - which is <URL```/accounts/signup```>
