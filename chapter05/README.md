@@ -157,3 +157,7 @@
 - tell user 'is he/she logined or not' 
     - code like ```user.is_authenticated``` in templates (```base.html```)
     - more on that, just go see the code!
+- let's impl the 'logout' (what we impl previously is 'log in') 
+    - only two steps needed (**based on the implementation of 'log in'**)
+        1. ```base.html```: add ```{% url 'logout' %}``` 
+        2. ```settings.py```: add ```LOGOUT_REDIRECT_URL = 'home'```
