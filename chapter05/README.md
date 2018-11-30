@@ -73,6 +73,7 @@
         - now
             - ```<h2><a href="{% url 'post_detail' post.pk %}">{{ post.title }}</a></h2>```
 
+
 <hr>
 
 # Here comes the 'chapter06' (which based on the 'Chapter05' project)
@@ -115,8 +116,39 @@
 
 ### Okay! Let's writing tests! 
 - other than the tests we've written before, we need these 
-    1. test_get_absolute_url #TODO add 'code' fmt (and the rest of them)
+    1. test_get_absolute_url #TODO code-fmt (and the rest of them)
     2. test_post_create_view
     3. test_post_create_view
     4. test_post_create_view
-- more content (& description) was written inside the tests.py #TODO code fmt
+- more content (& description) was written inside the tests.py #TODO code-fmt
+
+
+<hr>
+
+# Here comes the 'chapter07' (which <also> based on the 'Chapter05' project)
+
+### user auth! 
+- foreword 
+    - we don't build it (i.e. auth) from scratch, instead we're using the one provided by Django :P
+        - the 'auth' app was "installed" by default 
+        - it provides us with a 'User object' #TODO code-fmt containing 
+            - username, password #TODO code-fmt 
+            - email 
+            - first_name, last_name 
+        - the view provided was named LoginView #TODO code-fmt
+- (initial) steps #TODO code-fmt
+    1. urlpattern 
+        - path('accounts/', include('django.contrib.auth.urls')) 
+    2. template (the folder's name SHOULD be 'regi..')
+        - proj/templates/
+        - proj/templates/registration
+        - proj/templates/registration/login.html
+            - extends, block-content, title 
+            - form, form-csrf, form-as-p (for the ?'<br>' I assume?) 
+            - btn-submit (login)
+    3. tiny update of the settings.py 
+        - after login successfully, it'll redirect to LOGIN_REDIRECT_URL = 'home' #TODO code-fmt
+    4. umm... that's all!!!! we now DO have an auth function(gong-neng)
+        - but u need manually type the URL/accounts/login 
+            - if wrong, it'll notify you (it is FUNCTIONAL)
+            - if right, go to 'home.html' (by the 'settings.py')
