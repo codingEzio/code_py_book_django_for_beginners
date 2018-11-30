@@ -111,3 +111,12 @@
     2. write post_delete (similar, but not the same as 'post_edit')
         1. then its views 
         2. then its urls #TODO edit later 
+
+
+### Okay! Let's writing tests! 
+- other than the tests we've written before, we need these 
+    1. test_get_absolute_url #TODO add 'code' fmt (and the rest of them)
+    2. test_post_create_view
+    3. test_post_create_view
+    4. test_post_create_view
+- more content (& description) was written inside the tests.py #TODO code fmt

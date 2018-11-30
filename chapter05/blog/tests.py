@@ -37,6 +37,13 @@ class BlogTests(TestCase):
 
         self.assertEqual(str(post), post.title)
 
+    def test_get_absolute_url(self):
+        """ The'absolute' here means the posting link,
+            which it'll be used in the next(bottom) following 3 tests. 
+        """
+
+        self.assertEqual(self.post.get_absolute_url(), '/post/1/')
+
     def test_post_content(self):
         """ Test::do-we-insert-it-correctly?
         """
@@ -68,3 +75,47 @@ class BlogTests(TestCase):
 
         self.assertContains(response, 'A good title')
         self.assertTemplateUsed(response, 'post_detail.html')
+
+    def test_post_create_view(self):
+        """ Create content by posting, make senses :P
+        """
+
+        response = self.client.post(reverse('post_new'), {
+            'title': 'New title',
+            'body': 'New text',
+            'author': self.user,
+        })
+
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, 'New title')
+        self.assertContains(response, 'New text')
+
+    def test_post_update_view(self):
+        """ Q: 
+                Why the 'status_code' <should be> 302?
+            A:
+                After u updated the content,
+                it'll redirect to the original post.
+
+                The 'redirect' action itself will return '302'.
+                So, "302 return" means we've updated it <successfully>.
+        """
+
+        response = self.client.post(reverse('post_edit', args='1'), {
+            'title': 'Updated title',
+            'body': 'Updated text',
+        })
+
+        self.assertEqual(response.status_code, 302)
+
+    def test_post_delete_view(self):
+        """ This one is similar to the 'test_post_update_view'. 
+
+            The only difference here is that
+                update      redirect to the original post
+                delete      redirect to the homepage (which'd be '200')
+        """
+
+        response = self.client.get(reverse('post_delete', args='1'))
+
+        self.assertEqual(response.status_code, 200)
