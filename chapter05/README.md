@@ -128,15 +128,15 @@
 # Here comes the 'chapter07' (which <also> based on the 'Chapter05' project)
 
 ### user auth! 
-- foreword 
+- foreword (about *auth* itself) #TODO code-fmt, reorganizing-needed
     - we don't build it (i.e. auth) from scratch, instead we're using the one provided by Django :P
         - the 'auth' app was "installed" by default 
-        - it provides us with a 'User object' #TODO code-fmt containing 
-            - username, password #TODO code-fmt 
+        - it provides us with a 'User object'
+            - username, password 
             - email 
             - first_name, last_name 
-        - the view provided was named LoginView #TODO code-fmt
-- (initial) steps #TODO code-fmt
+        - the view provided was named LoginView 
+- (initial) steps #TODO code-fmt, reorganizing-needed
     1. urlpattern 
         - path('accounts/', include('django.contrib.auth.urls')) 
     2. template (the folder's name SHOULD be 'regi..')
@@ -147,8 +147,13 @@
             - form, form-csrf, form-as-p (for the ?'<br>' I assume?) 
             - btn-submit (login)
     3. tiny update of the settings.py 
-        - after login successfully, it'll redirect to LOGIN_REDIRECT_URL = 'home' #TODO code-fmt
-    4. umm... that's all!!!! we now DO have an auth function(gong-neng)
+        - after login successfully, it'll redirect to LOGIN_REDIRECT_URL = 'home' 
+    4. umm... that's all!!!! we now DO have an auth feature
         - but u need manually type the URL/accounts/login 
             - if wrong, it'll notify you (it is FUNCTIONAL)
             - if right, go to 'home.html' (by the 'settings.py')
+
+### more about *user auth*
+- tell user 'is he/she logined or not' 
+    - code like ```user.is_authenticated``` in templates (```base.html```)
+    - more on that, just go see the code!
