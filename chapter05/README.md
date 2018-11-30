@@ -161,3 +161,10 @@
     - only two steps needed (**based on the implementation of 'log in'**)
         1. ```base.html```: add ```{% url 'logout' %}``` 
         2. ```settings.py```: add ```LOGOUT_REDIRECT_URL = 'home'```
+
+### sign up! 
+- inital steps 
+    1. create an app ```accounts``` and name-it let Django knows it
+        - create: ```python3 manage.py startapp accounts```
+        - let'em know: ```accounts.apps.AccountsConfig``` (in ```INSTALLED_APPS``` of ```settings.py```)
+    2. 
