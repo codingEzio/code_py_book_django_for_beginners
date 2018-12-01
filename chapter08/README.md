@@ -112,3 +112,12 @@
 - and then our "views" -> "templates" (kinda a cycle that'll go all along)
 - What we're doin' (**FOR NOW**, ONLY **IN THIS CONTEXT** (i.e. 'get an pages app')) is 
     - *replacing the code-gen-homepage* => *templt-html-used-before* 
+
+### bootstrap NOW? 
+- *Nah*, let's **write tests first** that for the work we've done for now!!
+- Writing them in the ```pages/tests.py```
+    - just go check the test file :P 
+    - there's new one in contrast to the tests we've written before (i.e. *forms*)
+
+### YES, bootstrap NOW! 
+- 
