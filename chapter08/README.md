@@ -120,4 +120,10 @@
     - there's new one in contrast to the tests we've written before (i.e. *forms*)
 
 ### YES, bootstrap NOW! 
+- how we're gonna use it?
+    1. dl the files 
+    2. name the links (inside .html file)
+- We'll firstly update the "base.html".
+    - add related links of *css* and *javascript* 
+    - it's all added inside (nothing complicated :P)
 - 
