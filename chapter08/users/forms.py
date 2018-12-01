@@ -14,13 +14,13 @@ class CustomUserCreationForm(UserCreationForm):
             then it'll display automatically on ur future sign-up page
 
     What are these default fields?
-        
+
         It got lots fields, e.g. f_name, l_name, email etc.
             Yet, we'll see only a few of them showed up on the sign-up form.
-        
-        So, the default setting for fields on `UserCreationForm`
-            is just 'username', 'email', 'password' (though there're many available)
-            
+
+        The default setting for fields on this is just
+            'username', 'email', 'password' (though there're many available)
+
     Well.. words above is quote from the book.
         You actually could go directly to see the source code of Django!
     """
