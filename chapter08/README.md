@@ -20,6 +20,16 @@
 
 
 ### Customizing user model
+> Most notes were takin as comments (inside ```forms.py``` & ```admin.py```)
 - let django knows it as well 
     1. model class ```CustomUser``` in app/```models.py```
     2. ```AUTH_USER_MODEL = 'users.CustomUser'``` in proj/```settings.py```
+- ah! let's create **forms**! 
+    - first we'll make two types of *forms*
+        1. ```UserCreationForm```
+        2. ```UserChangeForm```
+- and "registering" them on the ```admin.py```
+    - in cmp to before, 
+    - now we add a model **and** a *CustomUserAdmin* (addition to default)
+- okay! let's ***make some migrations*** !!
+    1. 
