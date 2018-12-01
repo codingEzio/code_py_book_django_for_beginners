@@ -1,4 +1,6 @@
 
+# Chapter 08 (that's other chapter(s) down below)
+
 ### Custom User Model 
 - It's just means:
     - in real life, the default option provided is not enough
@@ -33,9 +35,19 @@
     - now we add a model **and** a *CustomUserAdmin* (addition to default)
 - okay! we're ready to go!
     1. ***make some migrations*** first!!! 
-        - ```python
-./manage.py makemigrations users 
-./manage.py migrate
-```
+        - ```./manage.py makemigrations users ```
+        - ```./manage.py migrate```
+
     2. **create a superuser** (must've done the "migrate" first)
     3. now you can go inside the URL```/admin``` now! (unfinished yet)
+- but that's not enough actually 
+    - one more line! 
+    - class CustomUserAdmin on ```admin.py```
+    - ```list_display = ['email', 'username', 'age', 'is_staff', ]```
+    
+    
+# Chapter 09 (based on Chapter 08) 
+
+### Home comes the *User Authentication*!
+
+- here we go!
