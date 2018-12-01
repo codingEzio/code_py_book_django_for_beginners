@@ -78,3 +78,17 @@
     2. proj/*home.html*
     3. proj/*signup.html*
     4. proj/```templates/registration/```*login.html*
+- third, related ```urls.py``` & ```views.py```
+    - **PROJECT_newspaper_project**/```urls.py```
+    - **APP_users/**```urls.py```
+- third in details 
+    1. proj/urls.py 
+        - ```path('users/', include('users.urls')),```
+        - ```path('users/', include('django.contrib.auth.urls')),```
+        - ```path('', TemplateView.as_view(template_name='home.html'), name='home'),```
+    2. app/urls.py
+        - ```path("signup/", SignUpView.as_view(), name="signup"),``` (import needed)
+    3. app/views.py
+        - ```class SignUpView``` (while using the ```forms.py``` we've created before)
+- fourth we'll add one more option (i.e. *email addr*) in sign-up page! 
+    1. 
