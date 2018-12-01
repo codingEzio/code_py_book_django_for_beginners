@@ -49,5 +49,32 @@
 # Chapter 09 (based on Chapter 08) 
 
 ### Home comes the *User Authentication*!
+- Okay...
 
-- here we go!
+### Wait! Let's creating some templates first :P
+- **NEW CONCEPT**
+    1. The *Django loader* looks for tmplts in a nested struc ***within each app***.
+        - so it means that *if you wanna add templates (specific for the app)*
+        - y'll need put it in APP_FOLDER/```templates/APP_FOLDER/TEMPLATES_FILE``` 
+    2. Well, I'm just sayin', I won't impl this right away.
+    3. (🐶) Here's another quote of author (🐶)
+        > ... a project-level ```templates``` folder approach is cleaner & scales better ...
+        
+### and some templates & UX thoughts
+- nothing new about templates
+- the page being redirected to after user login successfully, where?
+    - normally 'home' (i.e. homepage, sort of)
+    - **where's "home" comes from**?
+    - right here: PROJECT/APP_FOLDER/```urls.py``` ('name' param)
+
+### Okay, we're gonna write some templates
+- first,
+    1. ```'DIRS': [os.path.join(BASE_DIR, 'templates')],``` in **settings.py**
+    2. two lines in **settings.py** (add to the bottom)
+        - ```LOGIN_REDIRECT_URL = 'home'```
+        - ```LOGOUT_REDIRECT_URL = 'home'```
+- second, the files & folders
+    1. proj/*base.html*
+    2. proj/*home.html*
+    3. proj/*signup.html*
+    4. proj/```templates/registration/```*login.html*
