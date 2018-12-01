@@ -17,3 +17,9 @@
     - not yet, we'll it after we created the ***customized user model***
 - base 
     1. let Django "knows" the app: ```'users.apps.UsersConfig'``` (in ```settings.py```)
+
+
+### Customizing user model
+- let django knows it as well 
+    1. model class ```CustomUser``` in app/```models.py```
+    2. ```AUTH_USER_MODEL = 'users.CustomUser'``` in proj/```settings.py```
