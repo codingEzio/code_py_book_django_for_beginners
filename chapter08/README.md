@@ -126,4 +126,8 @@
 - We'll firstly update the "base.html".
     - add related links of *css* and *javascript* 
     - it's all added inside (nothing complicated :P)
-- 
+- so ... we've *"imported"* the files (```.css```, ```.js```)
+    - now we could apply any styles to the elements 
+        - (specifically other than the **base.html**)
+    - e.g. we changed the button style of **login.html**
+        - ```<button class="btn btn-success ml-2" type='submit'>Log In</button>```
