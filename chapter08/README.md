@@ -96,3 +96,19 @@
             - change the ```fields``` variable to 
                 - ```fields = ('username', 'email', 'age', )```
 
+    
+# Chapter 09 (still based on Chapter 08) 
+
+### Add some styles! 
+- Here comes the **Bootstrap** !
+
+### Initial setup
+- get an "app" (i.e. 'pages') by 
+    1. ```./manage.py startapp pages```
+    2. add ```'pages.apps.PagesConfig',``` to **settings.py**
+- update "urls" (i.e. **urls.py**)
+    1. proj/urls.py
+    2. app_pages/urls.py
+- and then our "views" -> "templates" (kinda a cycle that'll go all along)
+- What we're doin' (**FOR NOW**, ONLY **IN THIS CONTEXT** (i.e. 'get an pages app')) is 
+    - *replacing the code-gen-homepage* => *templt-html-used-before* 
