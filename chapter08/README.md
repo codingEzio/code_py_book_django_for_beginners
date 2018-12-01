@@ -90,5 +90,9 @@
         - ```path("signup/", SignUpView.as_view(), name="signup"),``` (import needed)
     3. app/views.py
         - ```class SignUpView``` (while using the ```forms.py``` we've created before)
-- fourth we'll add one more option (i.e. *email addr*) in sign-up page! 
-    1. 
+- fourth we'll add **one more option** (i.e. *email addr*) in **sign-up page**! 
+    - change the two classes: ```CustomUserCreationForm``` & ```CustomUserChangeForm```
+        - change both their subclass: ```Meta```
+            - change the ```fields``` variable to 
+                - ```fields = ('username', 'email', 'age', )```
+

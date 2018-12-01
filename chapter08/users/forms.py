@@ -9,6 +9,7 @@ class CustomUserCreationForm(UserCreationForm):
     """
     `Meta.fields` contains all the default fields.
 
+        ( ---- Part of the content will be invalid in the future ---- )
         For our own 'customize' (mostly "add things"),
             we simply tack it on at the end (i.e. + ('age') )
             then it'll display automatically on ur future sign-up page
@@ -27,11 +28,11 @@ class CustomUserCreationForm(UserCreationForm):
 
     class Meta(UserCreationForm.Meta):
         model = CustomUser
-        fields = UserCreationForm.Meta.fields + ('age',)
+        fields = ('username', 'email', 'age', )
 
 
 class CustomUserChangeForm(UserChangeForm):
 
     class Meta:
         model = CustomUser
-        fields = UserChangeForm.Meta.fields
+        fields = ('username', 'email', 'age', )
