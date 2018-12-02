@@ -131,3 +131,19 @@
         - (specifically other than the **base.html**)
     - e.g. we changed the button style of **login.html**
         - ```<button class="btn btn-success ml-2" type='submit'>Log In</button>```
+
+### Let's talk about the **sign-up** page :P
+- (specifically the 'password requirement' (or sayin' "help_text"), stylish concerns I assume)
+- We're not tring to 'replace' (or sayin' "overwrite") the "help_text", 
+    - instead, we're using a third-party modules named ***django-crispy-forms***
+        - install it by ```pip3 install django-crispy-forms==1.7.2``` (the ver. is optional)
+    - then let Django "knows" it by (**settings.py**)
+        1. INSTALLED_APPS -> add ```'crispy_forms',``` 
+        2. at the bottom -> add ```CRISPY_TEMPLATE_PACK = 'bootstrap4'``` 
+- we can use it for our templates! (steps of modifying ```signup.html```)
+    1. load it by ```{% load crispy_forms_tags %}``` (right after the ```extends```)
+    2. changes 
+        - before: ```{{ form.as_p }}```
+        - after: ```{{ form | crispy  }}```
+
+### A
