@@ -221,3 +221,30 @@
     4. now you could go check the ur inbox!!! (got one? nice!!)
     5. then click the "Verify Integration" on the *sendgrid* page (optional I assume, but whatever 🐶)
 - Till now, our "password-reset" got real service (i.e. *sending reset email*) as backend! 
+
+### Custom emails (still continue the prev 'practical usage')
+- note 
+    1. my IP has been *throttled* (i.e. the reset-email cannot be sent out)
+    2. so.. down below is just demenstration (typing code ...)
+- still, the default content being sent definitely is provided by Django itself 
+    - after all, it's just coooooooode! 
+    - where is it exactly?
+        - here (split into two parts)
+            1. ```VIRTUAL_ENV/lib/python3.6/site-packages/django/contrib```
+            2. ```/admin/templates/registration/password_reset_email.html```
+- so let's start customizing our own, yo! 
+    - both under ```templates/registration/```
+        1. **```password_reset_email.html```**
+        2. **```password_reset_subject.txt```**
+    - now just go directly to the reset-page 
+        - everything ... should be fine 🐤 I assume 🙈
+
+
+# Chapter 13 (still based on Chapter 08) 
+
+### Time to build out our real *Newspaper* app! 
+- What should be added right now?
+    1. an articles page where you can ***post articles***
+    2. seting up permissions that only ***author*** of an article can ***edit*** (or ***delete*** it)
+    3. other users could ***write comments*** on each article 
+
