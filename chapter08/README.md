@@ -198,3 +198,26 @@
 ### Emails! 
 - Third-party service: [SendGrid](https://sendgrid.com/)
 
+### Intro (by myself)
+- When you've registered, go to [*Integrate using our Web API or SMTP Relay*](https://app.sendgrid.com/guide/integrate)
+    - select the option: "SMTP Relay" (cuz it's easier for now, said by the author)
+
+### Practical usage 
+- first change the value of ```EMAIL_BACKEND``` in **settings.py**
+    - to ```EMAIL_BACKEND = 'django.core.mail.backends.```**```smtp.```**```EmailBackend'```
+- then add the config stuff (still write to the **settings.py**)
+    - you actually should NOT add these directly (cuz that's NOT SAFE!)
+    - we will place the vars here just to keep things simple :)
+        - the things gonna be added 
+            - ```EMAIL_HOST = 'smtp.sendgrid.net'``` 
+            - ```EMAIL_HOST_USER = 'apikey'```
+            - ```EMAIL_HOST_PASSWORD = ```*```THE_API_KEY```*
+            - ```EMAIL_PORT = 587```
+            - ```EMAIL_USE_TLS = True```
+- then run the server 
+    1. you need a (local) user got an (**real**) email addr (if not => create one!)
+    2. now, you can go the reset-page: ```http://127.0.0.1:8000/users/password_reset/``` 
+    3. type ur (true) email to test (**sendgrid-email-service**) whether it works or not 
+    4. now you could go check the ur inbox!!! (got one? nice!!)
+    5. then click the "Verify Integration" on the *sendgrid* page (optional I assume, but whatever 🐶)
+- Till now, our "password-reset" got real service (i.e. *sending reset email*) as backend! 
