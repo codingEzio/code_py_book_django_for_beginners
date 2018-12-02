@@ -146,4 +146,38 @@
         - before: ```{{ form.as_p }}```
         - after: ```{{ form | crispy  }}```
 
-### A
+### Now, we're gonna talk about "password change & reset" 
+- "We" will mention both 
+    1. the **built-in** 
+    2. and **our-customized-version** (powered by Bootstrap) (plus *email service*)
+
+### how you get there (ver: built-in)
+- type URL/```users/password_change``` (it works, just to be clear)
+
+### customize our own **password change**
+- firstly, templates! 
+    1. proj/```templates/registration/```**```password_change_form.html```**
+    2. proj/```templates/registration/```**```password_change_done.html```**
+- once u've written them, just refresh the page, it's done! 
+
+### lastly, let's talk about the **password reset**
+- quotes from author (*a reminder for myself*) (slightly changed a few words)
+    1. ... *the steps (i.e. "reset") are similar to conf password change* ...
+    2. ... *Django already provides a default impl that we'll use and then customize* ...
+
+### we'll use the Djangos' first (**settings.py**)
+- the basic usage
+    1. add ```EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'``` to the bottom
+    2. go to [Password reset](http://localhost:8000/users/password_reset/)
+    3. typing the email addr which was used while registering (you might don't have it XD)
+    4. check the terminal (e.g. ```runserver```)
+    5. there should be an email sent from *Django* itself  
+        - access the url it provided 
+        - typing the new passwd, then it's all done 
+    6. some notes here
+        - ya always should provided ur email while registering (debug purposes!)
+        - *Django* will NOT mistaken whose password will be changed (even there's an user was online (by cookie))
+- and might add some styles, shall we?
+    
+
+- then we'll use a third-party service: [SendGrid](https://sendgrid.com/)
