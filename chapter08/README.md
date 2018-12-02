@@ -97,7 +97,7 @@
                 - ```fields = ('username', 'email', 'age', )```
 
     
-# Chapter 09 (still based on Chapter 08) 
+# Chapter 10 (still based on Chapter 08) 
 
 ### Add some styles! 
 - Here comes the **Bootstrap** !
@@ -146,6 +146,9 @@
         - before: ```{{ form.as_p }}```
         - after: ```{{ form | crispy  }}```
 
+    
+# Chapter 11 (still based on Chapter 08) 
+
 ### Now, we're gonna talk about "password change & reset" 
 - "We" will mention both 
     1. the **built-in** 
@@ -178,6 +181,20 @@
         - ya always should provided ur email while registering (debug purposes!)
         - *Django* will NOT mistaken whose password will be changed (even there's an user was online (by cookie))
 - and might add some styles, shall we?
-    
+    - four templates, please! 
+        1. ```templates/registration/```**```password_reset_form.html```**
+        2. ```templates/registration/```**```password_reset_done.html```**
+        3. ```templates/registration/```**```password_reset_confirm.html```**
+        4. ```templates/registration/```**```password_reset_complete.html```**
+    - its exec orders (in users' perspective) 
+        - form => access the reset url (type ur email)
+        - done => notification (we've sent for ya)
+        - confirm => typing new password (**link** provided by Django (**at terminal**))
+        - complete => reset complete (still notification)
 
-- then we'll use a third-party service: [SendGrid](https://sendgrid.com/)
+
+# Chapter 12 (still based on Chapter 08) 
+
+### Emails! 
+- Third-party service: [SendGrid](https://sendgrid.com/)
+
