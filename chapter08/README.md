@@ -248,3 +248,25 @@
     2. seting up permissions that only ***author*** of an article can ***edit*** (or ***delete*** it)
     3. other users could ***write comments*** on each article 
 
+### Let's go! 
+- Creating an app: 
+    1. ```./manage.py startapp``` **```articles```**
+    2. add ```'articles.apps.ArticlesConfig',``` to **settings.py**
+- Preparing (i.e. writing) ***models*** (**articles/models.py**)
+    1. ```date```
+        - change *Timezone* (i.e. ```UTC``` => ```America/New_York```) in **settings.py**
+    2. ```author```
+        - we're using the one which we've created before 
+            - specifically: ```users.CustomUser``` (set as ```AUTH_USER_MODEL)
+        - we can do this via ```get_user_model``` 
+    3. ```title```
+    4. ```body```
+- let's make some *migrations* & *register* work
+    - migrate
+        1. ```./manage.py makemigrations``` **```articles```**
+        2. ```./manage.py migrate```
+    - register (**articles/admin.py**)
+        - ```from .models import Article```<br>```admin.site.register(Article)``` 
+- okay! Now we can run the server to check what've done! 
+    - go directly to URL/**admin**, just in case you forgot
+ 
