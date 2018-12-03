@@ -299,4 +299,11 @@
     - a word about *specifically*
         1. R means 'Article List'
         2. Detail means '(specific) Article Detail'
-- Ah! 
+- Ah! Let's finished the ***C*** (create) part! (of **CRUD**)
+    - base 
+        1. views: ```ArticleCreateView```
+        2. urls: ```path(...)```
+        3. templates
+    - note 
+        - I've put the 'create' part before any parts of the code,
+        - just want to corrospond the 'CRUD' (ordering) :P
