@@ -269,4 +269,7 @@
         - ```from .models import Article```<br>```admin.site.register(Article)``` 
 - okay! Now we can run the server to check what've done! 
     - go directly to URL/**admin**, just in case you forgot
- 
+- btw, if u mistyped some cols in the ```models.py```
+    - just migrate again then it's fine 
+    - **make** and **migrate** (btw, the arg of 1st step should be the same u've typed before)
+
