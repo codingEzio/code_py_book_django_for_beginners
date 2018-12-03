@@ -278,9 +278,25 @@
     1. add app & let django knows it 
     2. write models & make migrations 
     3. register at admin
-- okay let's start (writing order, may not correlate to the exec order)
+- let's start (writing order, may not correlate to the exec order)
     1. add proj-level app-url (i.e. URL/articles/XXX)
     2. add *missing* app-level url 
         - add *missing* app-related views 
             - add *missing* view-related templates 
-    
+    3. okay! let's go to URL/**articles**/ to check the result! 
+
+### What do we got for now? 
+- Well, there's only the basic 'urls' & 'views' have been finished 
+    - we now can display the articles (beautified by 'Bootstrap', which is nice)
+    - but still left the "**Edit**" & "**Delete**" unfinished
+    - Let's starting to implement that! 
+- Ah. about the app: **articles**
+    - let's do these: urls => view => each its templates 
+- Impl details (sort of)
+    - what to add 
+        1. R U D -> (Read, Update, Delete) 
+        2. Detail
+    - a word about *specifically*
+        1. R means 'Article List'
+        2. Detail means '(specific) Article Detail'
+- Ah! 
