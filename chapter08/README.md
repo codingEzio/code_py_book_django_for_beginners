@@ -248,7 +248,7 @@
     2. seting up permissions that only ***author*** of an article can ***edit*** (or ***delete*** it)
     3. other users could ***write comments*** on each article 
 
-### Let's go! 
+### Basic setup (**posting** at **admin**)
 - Creating an app: 
     1. ```./manage.py startapp``` **```articles```**
     2. add ```'articles.apps.ArticlesConfig',``` to **settings.py**
@@ -273,3 +273,14 @@
     - just migrate again then it's fine 
     - **make** and **migrate** (btw, the arg of 1st step should be the same u've typed before)
 
+### Let's setup the **URLs** & **Views**
+- the steps we did before (just take this as a reminder!)
+    1. add app & let django knows it 
+    2. write models & make migrations 
+    3. register at admin
+- okay let's start (writing order, may not correlate to the exec order)
+    1. add proj-level app-url (i.e. URL/articles/XXX)
+    2. add *missing* app-level url 
+        - add *missing* app-related views 
+            - add *missing* view-related templates 
+    
