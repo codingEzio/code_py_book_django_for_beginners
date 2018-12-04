@@ -307,3 +307,8 @@
     - note 
         - I've put the 'create' part before any parts of the code,
         - just want to corrospond the 'CRUD' (ordering) :P
+
+### Ok! the basic 'CRUD' part was done! 
+- Now let's add the ```article_new``` to the navbar of homepage! 
+    - file to change: **base.html**
+    - any logic here: *whether the user is logged in or not*
