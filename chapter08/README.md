@@ -355,6 +355,8 @@
 - How => well, one step at a time! 
 
 ### Exactly ***how*** (& ***solving issues*** we've encoutered before)
+- 0x00 
+    1. The doc is ***awesome***! (Along with *Dash*)
 - 0x01 
     - Question
         - any user (even an anonymous one) could access the edit page 
@@ -365,5 +367,27 @@
         - articles/**views.py** 
             - ```from django.contrib.auth.mixins import LoginRequiredMixin```
             - ```class ArticleCreateView(LoginRequiredMixin, CreateView)```
+        - articles/**views.py** 
+            - inside the ```ArticleCreateView```
+                - add ```login_url = 'login'```
     - Result 
         - The 'edit' page now can't be accesed for those not-logged-in user
+        - But you'll encounter a '404' Page :) 
+            - ya need add the ```login_url``` to name a url for redirecting purpose
+            - it'll redirect to the page  u named 
+                - when the user is not logged in, which makes more senses :) 
+- 0x02 
+    - Question
+        - Nothing new 
+    - Goals 
+        - Not allowing any not-logged-in user to do any of the CRUD opts. 
+    - Code 
+        - Still 
+            - articles/**views.py**
+            - from blabla import LoginRequiredMixin
+        - The only difference is to change the *classname* & *redirect-url*
+            - ```Article[XXX]View(LoginRequiredMixin, XXXView):```
+            - ...... ```model = Article``` ......
+            - ```login_url = "login"```
+    - Result 
+        - If you're not logged in, you won't be able to do the CRUD opts.
