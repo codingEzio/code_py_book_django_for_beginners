@@ -358,7 +358,7 @@
 - 0x00 
     1. The doc is ***awesome***! (Along with *Dash*)
 - 0x01 
-    - Question
+    - Problem
         - any user (even an anonymous one) could access the edit page 
         - well, you still can not submit the content (but still bad!)
     - Goals 
@@ -377,8 +377,8 @@
             - it'll redirect to the page  u named 
                 - when the user is not logged in, which makes more senses :) 
 - 0x02 
-    - Question
-        - Nothing new 
+    - Problem
+        - *Nothing new* (**still based on 0x01**)
     - Goals 
         - Not allowing any not-logged-in user to do any of the CRUD opts. 
     - Code 
@@ -391,3 +391,12 @@
             - ```login_url = "login"```
     - Result 
         - If you're not logged in, you won't be able to do the CRUD opts.
+- 0x03 
+    - Problem 
+        - 
+    - Goals 
+        - 
+    - Code
+        - 
+    - Result 
+        - 
