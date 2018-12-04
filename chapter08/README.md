@@ -338,7 +338,7 @@
 
 ### Now, let's start fixing the biggest problems exists for a long time 
 - which is 
-    - **everyone** can edit/del anything on the website 
+    - **everyone** can edit/del anything on the website (well, actually NOT that)
     - if they know the URL (which is easy af, right?), let's **FIX IT**!
 
 ### Some concepts should be clear to u
@@ -347,3 +347,23 @@
     2. the latter: **enables a user signup/login** flow 
 - yep, Django is also has a built-in functionality for this 😊
 
+### Fixes 
+- no redudant author option when writing post<br>&nbsp;&nbsp;&nbsp;&nbsp;=> update the code of  ```ArticleCreateView``` (**views.py**)
+
+### Introducing a new concept: ***Mixin***
+- Why => "avoid" duplicate (code) yet still allow customization :P
+- How => well, one step at a time! 
+
+### Exactly ***how*** (& ***solving issues*** we've encoutered before)
+- 0x01 
+    - Question
+        - any user (even an anonymous one) could access the edit page 
+        - well, you still can not submit the content (but still bad!)
+    - Goals 
+        - let's directly *forbidden* the anonymous user to access it 
+    - Code    
+        - articles/**views.py** 
+            - ```from django.contrib.auth.mixins import LoginRequiredMixin```
+            - ```class ArticleCreateView(LoginRequiredMixin, CreateView)```
+    - Result 
+        - The 'edit' page now can't be accesed for those not-logged-in user
