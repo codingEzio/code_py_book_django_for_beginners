@@ -413,3 +413,19 @@
     - Result 
         - The posts can only be edit/del by its author, 
         - other than that? nope :P (which accomplished the task!)
+
+
+# Chapter 15 (still based on Chapter 08) 
+
+### Goals 
+- Add a dedicated ```comments``` app and link it to ```articles```
+
+### Steps 
+- basis 
+    - what to add 
+        - FILE: articles/**models.py**
+        - CLASS: ```Comment(models.Model)``` (newly added)
+    - and 
+        - ```./manage.py makemigrations articles```
+        - ```./manage.py migrate```
+    
