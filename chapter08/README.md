@@ -420,7 +420,7 @@
 ### Goals 
 - Add a dedicated ```comments``` app and link it to ```articles```
 
-### Steps 
+### Get an model! (i.e. **comment**) 
 - basis 
     - what to add 
         - FILE: articles/**models.py**
@@ -428,4 +428,27 @@
     - and 
         - ```./manage.py makemigrations articles```
         - ```./manage.py migrate```
-    
+    - lastly 
+        - articles/**admin.py**
+            1. ```from .models import Article, Comment```
+            2. ```admin.site.register(Comment)```
+        - only by doing this then the app will visible (displaying on website (?front/back))
+
+### Now we have it at the **backend**! But it could be better 
+- What to solve (quote from author)
+    > ... "wouldn't it be better to just see all ```Comment``` models related to a single ```Post``` model?" ... 
+- What to solve
+    1. The ```articles``` & ```comments``` app both needed to open seperately, which is **NOT** makes sense (right? 😅)
+    2. So, let's put it in the jar! (Nope) ***put the ```articles``` & ```comments``` on the same screen***! 
+- How to solve 
+    - Fact 
+        - Django provides two main *inline views*: ```TabularInline```, ```StackedInline``` (tiny differences btw)
+    - Code 
+        - modify the **admin.py**
+- What will be changed 
+    - Only the **admin.py**
+- Here we go (solutions)! 
+    - well, not clearly sayin, it's *wrapping* & *superclass* stuff :P
+    - summary (no detailed code, I didn't fully understand it yet)
+        1. two new classes added 
+        2. one more to register (to admin)
