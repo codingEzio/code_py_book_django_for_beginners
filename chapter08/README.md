@@ -452,3 +452,13 @@
     - summary (no detailed code, I didn't fully understand it yet)
         1. two new classes added 
         2. one more to register (to admin)
+
+### Now, let's finish the front part, shall we? 🤪
+- What will be changed 
+    - since the comments are still displayed under the articles 
+        - so, what we need to do is to modify the **article_list/detail.html** 
+        - also, there's no need to change the **views.py** or **urls.py** 😄
+    - what files?
+        - articles/**models.py**
+        - templates/**article_list.html**
+- 
