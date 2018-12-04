@@ -333,8 +333,17 @@
             - easier to main the integrity of a database 
             - give the option to "undelete" later (if needed)
 
+
+# Chapter 14 (still based on Chapter 08) 
+
 ### Now, let's start fixing the biggest problems exists for a long time 
 - which is 
     - **everyone** can edit/del anything on the website 
     - if they know the URL (which is easy af, right?), let's **FIX IT**!
-- 
+
+### Some concepts should be clear to u
+- *authorization* & *authentication*
+    1. the former: **restricts access** (e.g. all articles)
+    2. the latter: **enables a user signup/login** flow 
+- yep, Django is also has a built-in functionality for this 😊
+

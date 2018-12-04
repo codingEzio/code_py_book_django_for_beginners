@@ -9,7 +9,15 @@ from .models import Article
 class ArticleCreateView(CreateView):
     model = Article
     template_name = "article_new.html"
-    fields = ('title', 'body', 'author', )
+    fields = ('title', 'body', )
+
+    def form_valid(self, form):
+        """ Get current (sender of the req) user
+            then assign to the posts he/she is writing now.
+        """
+
+        form.instance.author = self.request.user
+        return super().form_valid(form)
 
 
 class ArticleListView(ListView):
