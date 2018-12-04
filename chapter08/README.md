@@ -393,10 +393,23 @@
         - If you're not logged in, you won't be able to do the CRUD opts.
 - 0x03 
     - Problem 
-        - 
+        - The not-logged-in permission has been restricted to minimum.
+        - **Yet still**, the user that already logged in 
+            - ***could make changes to any articles*** (which is **NOT** normal & not good in real word cases) 
+            - 
     - Goals 
-        - 
+        - In a simplest solution, which is,
+            - **only the author could make changes** to his/her posts - makes senses, huh?
     - Code
-        - 
+        - Base 
+            - FILE: articles/**views.py**
+            - IMPORT: ```from django.core.exceptions import PermissionDenied```
+        - Changes 
+            - CLASS
+                - ```ArticleUpdateView```
+                - ```ArticleDeleteView```
+            - METHOD 
+                - rewrite the ```dispatch()``` (go see the code!)
     - Result 
-        - 
+        - The posts can only be edit/del by its author, 
+        - other than that? nope :P (which accomplished the task!)
