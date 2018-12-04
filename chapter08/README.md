@@ -312,3 +312,6 @@
 - Now let's add the ```article_new``` to the navbar of homepage! 
     - file to change: **base.html**
     - any logic here: *whether the user is logged in or not*
+- Let's beautifying the homepage (again)! 
+    - file to change: **home.html**
+    - wut being used: **Bootstrap**
