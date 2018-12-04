@@ -315,3 +315,26 @@
 - Let's beautifying the homepage (again)! 
     - file to change: **home.html**
     - wut being used: **Bootstrap**
+
+### Alright! Let's talk about some DB-related crap! 
+- Check the URL addr while ur editing
+    - if there's 3 articles, 
+        - u del one, then added one. 
+        - **the URL of the new one** will continue the index (in cmp to total num of posts)
+    - 0, 1, 2 
+        - del 1, add -> 3 
+        - the 2 won't take the '1's place
+    - to be clear 
+        - the index continues 
+        - the content has gone, for good
+    - in real world (quotes)
+        1. most of them don't actually del anything 
+        2. instead, they 'hide' delete fields which 
+            - easier to main the integrity of a database 
+            - give the option to "undelete" later (if needed)
+
+### Now, let's start fixing the biggest problems exists for a long time 
+- which is 
+    - **everyone** can edit/del anything on the website 
+    - if they know the URL (which is easy af, right?), let's **FIX IT**!
+- 
